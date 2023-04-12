@@ -65,25 +65,25 @@ function activeCards() {
             card.classList.add('active');
             function asinc() {
                 return new Promise((resolve, reverse) => {
-                    id = setTimeout(() => {
+                    setTimeout(() => {
                         resolve()
                     }, 500);
                 })
             }
 
             asinc().then(() => {
-                if(card.querySelector('.back img').getAttribute('name') === (firstChild === undefined ? false : firstChild.querySelector('.back img').getAttribute('name'))) {
+                if(card.querySelector('.back img').getAttribute('name') === (!firstChild ? false: firstChild.querySelector('.back img').getAttribute('name'))) {
                     card.classList.remove('active');
                     firstChild.classList.remove('active');
                     card.classList.add('himnActive');
                     firstChild.classList.add('himnActive');
-                    firstChild = undefined;
-                } else if(card.querySelector('.back img').getAttribute('name') !== (firstChild !== undefined ? firstChild.querySelector('.back img').getAttribute('src') : card.querySelector('.back img').getAttribute('name'))) {
+                    firstChild = false;
+                } else if(card.querySelector('.back img').getAttribute('name') !== (firstChild ? firstChild.querySelector('.back img').getAttribute('src') : card.querySelector('.back img').getAttribute('name'))) {
                     card.classList.remove('active');
                     firstChild.classList.remove('active');
-                    firstChild = undefined;
+                    firstChild = false;
                 }
-                firstChild = card.getAttribute('class').indexOf('himnActive') !== -1 ? undefined : card.getAttribute('class').indexOf('active') !== -1 ? card : undefined;
+                firstChild = card.getAttribute('class').indexOf('himnActive') !== -1 ? false : card.getAttribute('class').indexOf('active') !== -1 ? card : false;
                 wining();
             })
         })
@@ -148,8 +148,8 @@ startGame.addEventListener('click', function() {
         img = document.querySelectorAll('#backImg');
         randomInclude();
         activeCards();
+        console.log(img)
         seconds(countInput * 14);
     }
 })
-
 console.log('1row 13sec, Built Narek 11.04.2023');
