@@ -1,0 +1,223 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  outline: none;
+  font-family: sans-serif;
+}
+
+.game {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  background-image: url("../images/background.jpg");
+  background-size: cover;
+  position: relative;
+}
+.game .countContainer {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 750px;
+  width: 100%;
+  border-radius: 20px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  align-items: center;
+  padding: 20px;
+  background: #333;
+  z-index: 10;
+}
+.game .countContainer.active {
+  visibility: hidden;
+  opacity: 0;
+  transition: 0.5s;
+}
+.game .countContainer .cardInput {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  gap: 30px;
+}
+.game .countContainer .cardInput .startTitle {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  color: white;
+  text-align: center;
+}
+.game .countContainer .cardInput .startTitle h2 {
+  font-size: 2.2em;
+  font-weight: normal;
+}
+.game .countContainer .cardInput .startTitle p {
+  font-size: 1.1em;
+}
+.game .countContainer .cardInput .input {
+  width: 100%;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+.game .countContainer .cardInput .input span {
+  font-size: 2em;
+  color: white;
+}
+.game .countContainer .cardInput .input input {
+  width: 100%;
+  padding: 20px 5px;
+  border-radius: 5px;
+  border: none;
+  background: white;
+  box-shadow: 0px 0px 7px 3px rgba(0, 0, 0, 0.19);
+}
+.game .countContainer .cardInput .buttons {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.game .countContainer .cardInput .buttons button {
+  padding: 12px 45px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1.1em;
+  box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.1);
+  border: none;
+  background: white;
+  color: #111;
+}
+.game .countContainer .img {
+  width: 100%;
+  height: 100%;
+}
+.game .countContainer .img img {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+}
+.game_container {
+  max-width: 700px;
+  width: 100%;
+  padding: 30px 40px;
+  border-radius: 20px;
+  background: #333;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  position: relative;
+}
+.game_container .playAgain {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 30px;
+  z-index: 10;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.5s;
+}
+.game_container .playAgain h3 {
+  font-size: 2.5em;
+  font-weight: normal;
+  color: white;
+}
+.game_container .playAgain button {
+  padding: 12px 45px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1.1em;
+  box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.1);
+  border: none;
+  background: white;
+  color: #111;
+}
+.game_container.active .playAgain {
+  visibility: visible;
+  opacity: 1;
+}
+.game_container .top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  color: white;
+}
+.game_container .top h3 {
+  font-size: 1.2em;
+  font-weight: normal;
+}
+.game_container .cards {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(75px, 95px));
+  grid-auto-rows: minmax(75px, 95px);
+  justify-content: space-between;
+  gap: 10px;
+}
+.game_container .cards .card {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform-style: preserve-3d;
+  perspective: 1000px;
+  cursor: pointer;
+  pointer-events: painted;
+  transition: 0.5s;
+}
+.game_container .cards .card.active {
+  transform: rotateY(180deg);
+  pointer-events: none;
+}
+.game_container .cards .card.himnActive {
+  transform: rotateY(180deg) scale(0.9);
+  pointer-events: none;
+}
+.game_container .cards .card img {
+  width: 50px;
+  height: 50px;
+  background-size: cover;
+}
+.game_container .cards .card .front {
+  width: 100%;
+  height: 100%;
+  background: wheat;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  backface-visibility: hidden;
+}
+.game_container .cards .card .back {
+  width: 100%;
+  height: 100%;
+  background: white;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: rotateY(180deg);
+  backface-visibility: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}/*# sourceMappingURL=style.css.map */

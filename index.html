@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memory Game</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    
+    <div class="game">
+
+        <div class="countContainer">
+            <div class="cardInput">
+                <div class="startTitle">
+                    <h2>Memory Game make JS</h2>
+                    <p>You can choose columns count</p>    
+                </div>
+                <div class="input">
+                    <input class="countInput" type="number" value="4" max="10" min="1">
+                    <span>*</span>
+                    <input type="text" value="6" disabled>
+                </div>
+
+                <div class="buttons">
+                    <button class="play">Start Game</button>
+                </div>
+            </div>
+            <div class="img">
+                <img src="images/game.jpg" alt="...">
+            </div>
+        </div>
+
+        <div class="game_container">
+            <div class="playAgain">
+                <h3 class="changeTitle"></h3>
+                <button class="playAgainBtn">Play Again</button>
+            </div>
+            <div class="top">
+                <h3>Memory Game</h3>
+                <span class="second"></span>
+            </div>
+            <div class="cards">
+                <!-- cards get obj -->
+            </div>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
